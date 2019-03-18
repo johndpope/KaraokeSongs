@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14ED02AA9908F89CCAD60119 /* Pods_KaraokeSongs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F726B8CFE1BDF88F344786 /* Pods_KaraokeSongs.framework */; };
+		6F097DED223E58EF00146781 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F097DEC223E58EF00146781 /* UIColor+Extension.swift */; };
+		6F097DEF223E5E8300146781 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F097DEE223E5E8300146781 /* Array+Extension.swift */; };
+		6F097DF1223E5FA400146781 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F097DF0223E5FA400146781 /* UIView+Extension.swift */; };
+		6F097DF3223F0A4800146781 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F097DF2223F0A4800146781 /* UIImageView+Extension.swift */; };
+		6FC0B9EB223E03520034669B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0B9EA223E03520034669B /* AppDelegate.swift */; };
+		6FC0B9F0223E03520034669B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC0B9EE223E03520034669B /* Main.storyboard */; };
+		6FC0B9F2223E03530034669B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FC0B9F1223E03530034669B /* Assets.xcassets */; };
+		6FC0B9F5223E03530034669B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC0B9F3223E03530034669B /* LaunchScreen.storyboard */; };
+		6FC0BA02223E037D0034669B /* KaraokeSongsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0B9FF223E037D0034669B /* KaraokeSongsEndPoint.swift */; };
+		6FC0BA03223E037D0034669B /* KaraokeSongsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA00223E037D0034669B /* KaraokeSongsAPIClient.swift */; };
+		6FC0BA04223E037D0034669B /* KaraokeSongsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA01223E037D0034669B /* KaraokeSongsClient.swift */; };
+		6FC0BA0B223E03ED0034669B /* KaraokeSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA05223E03ED0034669B /* KaraokeSongsPresenter.swift */; };
+		6FC0BA0C223E03ED0034669B /* KaraokeSongsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA06223E03ED0034669B /* KaraokeSongsWorker.swift */; };
+		6FC0BA0D223E03ED0034669B /* KaraokeSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA07223E03ED0034669B /* KaraokeSongsRouter.swift */; };
+		6FC0BA0E223E03ED0034669B /* KaraokeSongsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA08223E03ED0034669B /* KaraokeSongsModels.swift */; };
+		6FC0BA0F223E03ED0034669B /* KaraokeSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA09223E03ED0034669B /* KaraokeSongsViewController.swift */; };
+		6FC0BA10223E03ED0034669B /* KaraokeSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0BA0A223E03ED0034669B /* KaraokeSongsInteractor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		028A7B946E3308395437B81A /* Pods-KaraokeSongs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSongs.release.xcconfig"; path = "Target Support Files/Pods-KaraokeSongs/Pods-KaraokeSongs.release.xcconfig"; sourceTree = "<group>"; };
+		66597A3C699902EA0DBFFEFA /* Pods-KaraokeSongs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSongs.debug.xcconfig"; path = "Target Support Files/Pods-KaraokeSongs/Pods-KaraokeSongs.debug.xcconfig"; sourceTree = "<group>"; };
+		6F097DEC223E58EF00146781 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		6F097DEE223E5E8300146781 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		6F097DF0223E5FA400146781 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		6F097DF2223F0A4800146781 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		6FC0B9E7223E03520034669B /* KaraokeSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaraokeSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FC0B9EA223E03520034669B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FC0B9EF223E03520034669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FC0B9F1223E03530034669B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FC0B9F4223E03530034669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FC0B9F6223E03530034669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FC0B9FF223E037D0034669B /* KaraokeSongsEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaraokeSongsEndPoint.swift; sourceTree = "<group>"; };
+		6FC0BA00223E037D0034669B /* KaraokeSongsAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaraokeSongsAPIClient.swift; sourceTree = "<group>"; };
+		6FC0BA01223E037D0034669B /* KaraokeSongsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaraokeSongsClient.swift; sourceTree = "<group>"; };
+		6FC0BA05223E03ED0034669B /* KaraokeSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsPresenter.swift; sourceTree = "<group>"; };
+		6FC0BA06223E03ED0034669B /* KaraokeSongsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsWorker.swift; sourceTree = "<group>"; };
+		6FC0BA07223E03ED0034669B /* KaraokeSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsRouter.swift; sourceTree = "<group>"; };
+		6FC0BA08223E03ED0034669B /* KaraokeSongsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsModels.swift; sourceTree = "<group>"; };
+		6FC0BA09223E03ED0034669B /* KaraokeSongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsViewController.swift; sourceTree = "<group>"; };
+		6FC0BA0A223E03ED0034669B /* KaraokeSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSongsInteractor.swift; sourceTree = "<group>"; };
+		F1F726B8CFE1BDF88F344786 /* Pods_KaraokeSongs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaraokeSongs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FC0B9E4223E03520034669B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14ED02AA9908F89CCAD60119 /* Pods_KaraokeSongs.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10B873D243545199CE796D77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66597A3C699902EA0DBFFEFA /* Pods-KaraokeSongs.debug.xcconfig */,
+				028A7B946E3308395437B81A /* Pods-KaraokeSongs.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F097DEB223E4BCF00146781 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6F097DEC223E58EF00146781 /* UIColor+Extension.swift */,
+				6F097DEE223E5E8300146781 /* Array+Extension.swift */,
+				6F097DF0223E5FA400146781 /* UIView+Extension.swift */,
+				6F097DF2223F0A4800146781 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6FC0B9DE223E03520034669B = {
+			isa = PBXGroup;
+			children = (
+				6FC0B9E9223E03520034669B /* KaraokeSongs */,
+				6FC0B9E8223E03520034669B /* Products */,
+				10B873D243545199CE796D77 /* Pods */,
+				F0D52235B0BE2F02F435A2E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6FC0B9E8223E03520034669B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FC0B9E7223E03520034669B /* KaraokeSongs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FC0B9E9223E03520034669B /* KaraokeSongs */ = {
+			isa = PBXGroup;
+			children = (
+				6FC0B9FC223E035C0034669B /* Source */,
+				6FC0B9EA223E03520034669B /* AppDelegate.swift */,
+				6FC0B9EE223E03520034669B /* Main.storyboard */,
+				6FC0B9F1223E03530034669B /* Assets.xcassets */,
+				6FC0B9F3223E03530034669B /* LaunchScreen.storyboard */,
+				6FC0B9F6223E03530034669B /* Info.plist */,
+			);
+			path = KaraokeSongs;
+			sourceTree = "<group>";
+		};
+		6FC0B9FC223E035C0034669B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6F097DEB223E4BCF00146781 /* Extensions */,
+				6FC0B9FE223E03700034669B /* APIWorker */,
+				6FC0B9FD223E03620034669B /* Scenes */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6FC0B9FD223E03620034669B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6FC0BA05223E03ED0034669B /* KaraokeSongsPresenter.swift */,
+				6FC0BA06223E03ED0034669B /* KaraokeSongsWorker.swift */,
+				6FC0BA07223E03ED0034669B /* KaraokeSongsRouter.swift */,
+				6FC0BA08223E03ED0034669B /* KaraokeSongsModels.swift */,
+				6FC0BA09223E03ED0034669B /* KaraokeSongsViewController.swift */,
+				6FC0BA0A223E03ED0034669B /* KaraokeSongsInteractor.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6FC0B9FE223E03700034669B /* APIWorker */ = {
+			isa = PBXGroup;
+			children = (
+				6FC0BA00223E037D0034669B /* KaraokeSongsAPIClient.swift */,
+				6FC0BA01223E037D0034669B /* KaraokeSongsClient.swift */,
+				6FC0B9FF223E037D0034669B /* KaraokeSongsEndPoint.swift */,
+			);
+			path = APIWorker;
+			sourceTree = "<group>";
+		};
+		F0D52235B0BE2F02F435A2E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1F726B8CFE1BDF88F344786 /* Pods_KaraokeSongs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FC0B9E6223E03520034669B /* KaraokeSongs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FC0B9F9223E03530034669B /* Build configuration list for PBXNativeTarget "KaraokeSongs" */;
+			buildPhases = (
+				72DD9CDC31ACC534F3460C14 /* [CP] Check Pods Manifest.lock */,
+				6FC0B9E3223E03520034669B /* Sources */,
+				6FC0B9E4223E03520034669B /* Frameworks */,
+				6FC0B9E5223E03520034669B /* Resources */,
+				F93B9EC3F4EB8471321C709D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaraokeSongs;
+			productName = KaraokeSongs;
+			productReference = 6FC0B9E7223E03520034669B /* KaraokeSongs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FC0B9DF223E03520034669B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Nikhil Gohil";
+				TargetAttributes = {
+					6FC0B9E6223E03520034669B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 6FC0B9E2223E03520034669B /* Build configuration list for PBXProject "KaraokeSongs" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FC0B9DE223E03520034669B;
+			productRefGroup = 6FC0B9E8223E03520034669B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FC0B9E6223E03520034669B /* KaraokeSongs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FC0B9E5223E03520034669B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC0B9F5223E03530034669B /* LaunchScreen.storyboard in Resources */,
+				6FC0B9F2223E03530034669B /* Assets.xcassets in Resources */,
+				6FC0B9F0223E03520034669B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72DD9CDC31ACC534F3460C14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KaraokeSongs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F93B9EC3F4EB8471321C709D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KaraokeSongs/Pods-KaraokeSongs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KaraokeSongs/Pods-KaraokeSongs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FC0B9E3223E03520034669B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC0BA0B223E03ED0034669B /* KaraokeSongsPresenter.swift in Sources */,
+				6F097DF1223E5FA400146781 /* UIView+Extension.swift in Sources */,
+				6F097DF3223F0A4800146781 /* UIImageView+Extension.swift in Sources */,
+				6FC0BA10223E03ED0034669B /* KaraokeSongsInteractor.swift in Sources */,
+				6FC0BA0F223E03ED0034669B /* KaraokeSongsViewController.swift in Sources */,
+				6F097DEF223E5E8300146781 /* Array+Extension.swift in Sources */,
+				6F097DED223E58EF00146781 /* UIColor+Extension.swift in Sources */,
+				6FC0BA0E223E03ED0034669B /* KaraokeSongsModels.swift in Sources */,
+				6FC0B9EB223E03520034669B /* AppDelegate.swift in Sources */,
+				6FC0BA0C223E03ED0034669B /* KaraokeSongsWorker.swift in Sources */,
+				6FC0BA0D223E03ED0034669B /* KaraokeSongsRouter.swift in Sources */,
+				6FC0BA02223E037D0034669B /* KaraokeSongsEndPoint.swift in Sources */,
+				6FC0BA04223E037D0034669B /* KaraokeSongsClient.swift in Sources */,
+				6FC0BA03223E037D0034669B /* KaraokeSongsAPIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6FC0B9EE223E03520034669B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FC0B9EF223E03520034669B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FC0B9F3223E03530034669B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FC0B9F4223E03530034669B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FC0B9F7223E03530034669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FC0B9F8223E03530034669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FC0B9FA223E03530034669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66597A3C699902EA0DBFFEFA /* Pods-KaraokeSongs.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KaraokeSongs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gohil.KaraokeSongs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6FC0B9FB223E03530034669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028A7B946E3308395437B81A /* Pods-KaraokeSongs.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KaraokeSongs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Gohil.KaraokeSongs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FC0B9E2223E03520034669B /* Build configuration list for PBXProject "KaraokeSongs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FC0B9F7223E03530034669B /* Debug */,
+				6FC0B9F8223E03530034669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FC0B9F9223E03530034669B /* Build configuration list for PBXNativeTarget "KaraokeSongs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FC0B9FA223E03530034669B /* Debug */,
+				6FC0B9FB223E03530034669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FC0B9DF223E03520034669B /* Project object */;
+}
