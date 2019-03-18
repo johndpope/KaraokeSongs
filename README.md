@@ -15,10 +15,10 @@ iOS app showing list of Karaoke Songs from Popsical /songs.json API.
 1. :gem: [Cocoapods](https://cocoapods.org/)
 
 ### :octocat: How to run and test this app:
-1. :gem: Download this repo or clone it using 'git clone https://github.com/nikhilgohil11/KaraokeSongs.git' 💻
+1. :gem: Download this repo or clone it using ```'git clone https://github.com/nikhilgohil11/KaraokeSongs.git'``` 💻
 1. :gem: Open clone folder in terminal. 👨🏻‍💻
-1. :gem: Now install pod by using 'pod install' command. ⌨️
-1. :gem: Now open 'KaraokeSongs.xcworkspace' in Xcode.
+1. :gem: Now install pod by using ```'pod install'``` command. ⌨️
+1. :gem: Now open ```'KaraokeSongs.xcworkspace'``` in Xcode.
 
 
 ## :
