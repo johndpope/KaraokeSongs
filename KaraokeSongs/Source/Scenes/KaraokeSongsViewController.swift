@@ -7,101 +7,102 @@
 //
 
 import UIKit
+import SwiftIcons
 
 protocol KaraokeSongsDisplayLogic: class
 {
-  func displayKaraokeSongs(viewModel: KaraokeSongs.KaraokeModels.ViewModel)
-  func displayError(errorModel: KaraokeSongs.KaraokeModels.ErrorModel)
+    func displayKaraokeSongs(viewModel: KaraokeSongs.KaraokeModels.ViewModel)
+    func displayError(errorModel: KaraokeSongs.KaraokeModels.ErrorModel)
 }
 
 class KaraokeSongsViewController: UICollectionViewController, KaraokeSongsDisplayLogic
 {
-  var interactor: KaraokeSongsBusinessLogic?
-  var router: (NSObjectProtocol & KaraokeSongsRoutingLogic & KaraokeSongsDataPassing)?
-  var songs: [KaraokeSongs.KaraokeModels.KaraokeSong] = [KaraokeSongs.KaraokeModels.KaraokeSong]()
-  var nextCall: String?
-  var alreadyFetching: Bool = false
-  let refreshControl = UIRefreshControl()
-  var footerView : KaraokeSongsFooterView?
+    var interactor: KaraokeSongsBusinessLogic?
+    var router: (NSObjectProtocol & KaraokeSongsRoutingLogic & KaraokeSongsDataPassing)?
+    var songs: [KaraokeSongs.KaraokeModels.KaraokeSong] = [KaraokeSongs.KaraokeModels.KaraokeSong]()
+    var nextCall: String?
+    var alreadyFetching: Bool = false
+    let refreshControl = UIRefreshControl()
+    var footerView : KaraokeSongsFooterView?
     
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = KaraokeSongsInteractor()
-    let presenter = KaraokeSongsPresenter()
-    let router = KaraokeSongsRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    self.refreshControl.beginRefreshing()
-    doLoadSongs()
-    setupUI()
-  }
-  
-  // MARK: Do something
-  
-  func clearCollectionView(){
-    if self.songs.count > 0{
-        self.songs.removeAll()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.reloadData()
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
     }
-  }
-
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = KaraokeSongsInteractor()
+        let presenter = KaraokeSongsPresenter()
+        let router = KaraokeSongsRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        self.refreshControl.beginRefreshing()
+        doLoadSongs()
+        setupUI()
+    }
+    
+    // MARK: Do something
+    
+    func clearCollectionView(){
+        if self.songs.count > 0{
+            self.songs.removeAll()
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.reloadData()
+        }
+    }
+    
     func stopRefreshControl(){
         if self.refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
     }
     
-  //@IBOutlet weak var nameTextField: UITextField!
-  @objc
-  func doLoadSongs()
-  {
-    if self.refreshControl.isRefreshing == true {
-        clearCollectionView()
-        let request = KaraokeSongs.KaraokeModels.Request()
-        interactor?.doFetchSongs(request: request)
+    //@IBOutlet weak var nameTextField: UITextField!
+    @objc
+    func doLoadSongs()
+    {
+        if self.refreshControl.isRefreshing == true {
+            clearCollectionView()
+            let request = KaraokeSongs.KaraokeModels.Request()
+            interactor?.doFetchSongs(request: request)
+        }
     }
-  }
     
     func doLoadNextSongs(){
         if self.alreadyFetching == false{
@@ -111,18 +112,17 @@ class KaraokeSongsViewController: UICollectionViewController, KaraokeSongsDispla
             interactor?.doFetchNextSongs(request: request)
         }
     }
-  
+    
     func setupUI(){
         navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = UIColor(hex: 0xff0500)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
+        self.view.tintColor = UIColor(hex: 0xff0500)
         
-        self.view.tintColor = UIColor(hex: 0xed0000)
-
         collectionView.register(KaraokeSongCell.self, forCellWithReuseIdentifier: KaraokeSongCell.identifier)
         collectionView.register(KaraokeSongsFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: KaraokeSongsFooterView.identifier)
-
+        
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
@@ -135,11 +135,11 @@ class KaraokeSongsViewController: UICollectionViewController, KaraokeSongsDispla
         guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
-        flowLayout.itemSize = CGSize(width: self.view.frame.size.width-40, height: 100)
+        flowLayout.itemSize = CGSize(width: self.view.frame.size.width-40, height: 146)
         flowLayout.minimumLineSpacing = 15
         flowLayout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
         flowLayout.footerReferenceSize = CGSize(width: collectionView.bounds.size.width, height: 55)
-
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -159,9 +159,16 @@ class KaraokeSongsViewController: UICollectionViewController, KaraokeSongsDispla
             self.collectionView.reloadData()
         }
     }
-
+    
     func displayError(errorModel: KaraokeSongs.KaraokeModels.ErrorModel){
-        
+        self.alreadyFetching = false
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+            let alert = UIAlertController(title: errorModel.title, message: errorModel.message, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     
@@ -204,11 +211,30 @@ class KaraokeSongsViewController: UICollectionViewController, KaraokeSongsDispla
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: KaraokeSongCell.identifier, for: indexPath) as? KaraokeSongCell else { return UICollectionViewCell() }
         let song = songs[indexPath.item]
-//        item.imageView.image = alert.image
-//        item.imageView.tintColor = alert.color
-        item.title.text = song.trackName
-//        item.subtitle.textColor = .darkGray
+        assignCellValues(cell: item, model: song)
+        item.lyricsButtonAction = { [unowned self] in
+            let item = self.songs[indexPath.item]
+            print(item)
+            if let url = URL(string: item.originalLyricURL ?? "") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
         return item
+    }
+    
+    func assignCellValues( cell: KaraokeSongCell, model : KaraokeSongs.KaraokeModels.KaraokeSong){
+        cell.title.text = model.title
+        if model.imageUrl != nil{
+            cell.imageView.load(url: model.imageUrl!, placeholder: nil)
+        }
+        cell.imageView.circleCorner = true
+        cell.subtitle.text = model.altTitle
+        cell.langCode.text = model.langCode
+        cell.runtime.text = model.runtime
+        cell.releaseDate.text = model.releaseDate
+        cell.lyricsCount.text = model.lyricsCount
+        cell.genres.text = model.genres
+        cell.artistCount.text = model.artistCount
     }
 }
 
@@ -216,8 +242,15 @@ class KaraokeSongCell: UICollectionViewCell {
     
     static let identifier = String(describing: KaraokeSongCell.self)
     
+    var lyricsButtonAction : (() -> ())?
+    
     public lazy var imageView: UIImageView = {
-        $0.contentMode = .center
+        $0.contentMode = .scaleAspectFill
+        $0.circleCorner = true
+        $0.layer.masksToBounds = true
+        $0.layer.borderWidth = 1.5
+        $0.layer.borderColor = UIColor(hex: 0xff0500).cgColor
+        $0.backgroundColor = .lightGray
         return $0
     }(UIImageView())
     
@@ -235,19 +268,57 @@ class KaraokeSongCell: UICollectionViewCell {
         return $0
     }(UILabel())
     
-    fileprivate let textView = UIView()
+    public lazy var langCode: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
     
-    //    let ls2 = LabelSwitchConfig(text: "Yes",
-    //                                textColor: .white,
-    //                                font: .boldSystemFont(ofSize: 20),
-    //                                gradientColors: [UIColor.red.cgColor, UIColor.purple.cgColor], startPoint: CGPoint(x: 0.0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
-    //
-    //    let rs2 = LabelSwitchConfig(text: "No",
-    //                                textColor: .white,
-    //                                font: .boldSystemFont(ofSize: 20),
-    //                                gradientColors: [UIColor.yellow.cgColor, UIColor.orange.cgColor], startPoint: CGPoint(x: 0.0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
-    //
-    //    public let gradientLabelSwitch = LabelSwitch(center: CGPoint(x: contentView.center.x, y: contentView.center.y + 100), leftConfig: ls2, rightConfig: rs2, defaultState: .L)
+    public lazy var runtime: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
+    
+    public lazy var releaseDate: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
+    
+    public lazy var lyricsCount: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
+    
+    public lazy var genres: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
+    
+    public lazy var artistCount: UILabel = {
+        $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 11)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+        return $0
+    }(UILabel())
+    
+    lazy var originalLyricURLButton: UIButton = {
+        $0.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        $0.maskToBounds = true
+        $0.cornerRadius = 25
+        $0.setIcon(icon: .linearIcons(.musicNote), iconColor: UIColor(hex: 0xff0500), title: "Lyrics", titleColor: .black, font: .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 13), backgroundColor: .clear, borderSize: 1, borderColor: UIColor(hex: 0xff0500), forState: .normal)
+        $0.addTarget(self, action: #selector(KaraokeSongCell.linkClick),
+                     for: .touchUpInside)
+        return $0
+    }(UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50)))
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -262,34 +333,47 @@ class KaraokeSongCell: UICollectionViewCell {
     fileprivate func setup() {
         backgroundColor = .white
         contentView.addSubview(imageView)
-        contentView.addSubview(textView)
-        //contentView.addSubview(gradientLabelSwitch)
-        textView.addSubview(title)
-//        textView.addSubview(subtitle)
+        contentView.addSubview(title)
+        contentView.addSubview(subtitle)
+        contentView.addSubview(langCode)
+        contentView.addSubview(runtime)
+        contentView.addSubview(releaseDate)
+        contentView.addSubview(lyricsCount)
+        contentView.addSubview(genres)
+        contentView.addSubview(artistCount)
+        contentView.addSubview(originalLyricURLButton)
     }
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        //Log("layoutMargins = \(layoutMargins), contentView = \(contentView.bounds)")
         layout()
     }
     
+    override func prepareForReuse() {
+        imageView.image = nil
+    }
+    
     func layout() {
-//        let vTextInset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 4 : 2
-//        let hTextInset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 12 : 8
-//        let imageViewHeight: CGFloat = contentView.height - (layoutMargins.top + layoutMargins.bottom)
-//        imageView.frame = CGRect(x: layoutMargins.left + 4, y: layoutMargins.top, width: imageViewHeight, height: imageViewHeight)
-//        let textViewWidth: CGFloat = contentView.width - imageView.frame.maxX - 2 * hTextInset
-//        let titleSize = title.sizeThatFits(CGSize(width: textViewWidth, height: contentView.height))
-//        let subtitleSize = subtitle.sizeThatFits(CGSize(width: textViewWidth, height: contentView.height))
-        title.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.contentView.frame.size.width, height: 40))
-//        subtitle.frame = CGRect(origin: CGPoint(x: 0, y: title.frame.maxY + vTextInset), size: CGSize(width: textViewWidth, height: subtitleSize.height))
-//        textView.size = CGSize(width: textViewWidth, height: subtitle.frame.maxY)
-//        textView.frame.origin.x = imageView.frame.maxX + hTextInset
-//        textView.center.y = imageView.center.y
-        //textRect(forBounds: CGRect(x: 0, y: 0, width: Int.max, height: 30), limitedToNumberOfLines: 1).width
+        imageView.frame = CGRect(x: layoutMargins.left + 4, y: layoutMargins.top, width: 50, height: 50)
         
-//        style(view: contentView)
+        originalLyricURLButton.frame = CGRect(origin: CGPoint(x: layoutMargins.left + 4, y: layoutMargins.top+imageView.frame.size.height + 10), size: CGSize(width: 50, height: 50))
+        imageView.circleCorner = true
+        let imageMaxY = imageView.frame.origin.x + imageView.frame.size.width + layoutMargins.right
+        var top = layoutMargins.top
+        title.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 25))
+        top += title.frame.height
+        subtitle.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 20))
+        top += 20
+        releaseDate.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 15))
+        top += 18
+        langCode.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 15))
+        top += 18
+        lyricsCount.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 15))
+        top += 15
+        genres.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 15))
+        top += 15
+        artistCount.frame = CGRect(origin: CGPoint(x: imageMaxY, y: top), size: CGSize(width: self.contentView.frame.size.width - imageMaxY, height: 15))
+        style(view: contentView)
     }
     
     func style(view: UIView) {
@@ -304,19 +388,24 @@ class KaraokeSongCell: UICollectionViewCell {
         view.shadowShouldRasterize = true
         view.shadowRasterizationScale = UIScreen.main.scale
     }
+    
+    
+    @objc func linkClick(indexButton : UIButton) {
+        lyricsButtonAction?()
+    }
 }
 
 
 class KaraokeSongsFooterView : UICollectionReusableView{
     
     static let identifier = String(describing: KaraokeSongsFooterView.self)
-
+    
     public lazy var loadingLabel: UILabel = {
         $0.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 20 : 17)
         $0.textColor = .black
-        $0.text = "Loading..."
         $0.textAlignment = .center
         $0.numberOfLines = 1
+        $0.isHidden = true
         return $0
     }(UILabel())
     
@@ -350,8 +439,8 @@ class KaraokeSongsFooterView : UICollectionReusableView{
     
     //reset the animation
     func prepareInitialAnimation() {
+        self.loadingLabel.text = "Loading..."
         self.isAnimatingFinal = false
-         self.loadingLabel.isHidden = false
     }
     
     func startAnimate() {
